@@ -1,3 +1,27 @@
+# State and Lifecycle
+
+## State
+
+State is used with React Component Classes to make them dynamic. It enables the component to keep track of changing information in between renders. More specifically, the state of a component is an object that holds information that may change over the lifetime of the component.
+
+Props are immutable and dont change during the lifetime of the component.
+
+## Lifecycle
+
+Every React Component has a lifecycle of its own, lifecycle of a component can be defined as the series of methods that are invoked in different stages of the component’s existence.  
+A React Component can go through four stages of its life as follows.
+
+- **Initialization**: This is the stage where the component is constructed with the given Props and default state. This is done in the constructor of a Component Class.
+- **Mounting**: Mounting is the stage of rendering the JSX returned by the render method itself.
+- **Updating**: Updating is the stage when the state of a component is updated and the application is repainted.
+- **Unmounting**: As the name suggests Unmounting is the final step of the component lifecycle where the component is removed from the page.  
+  [Explaination](https://www.freecodecamp.org/news/how-to-understand-a-components-lifecycle-methods-in-reactjs-e1a609840630/)
+  ![Lifecycle](./lifecycle.png)
+
+## Hooks
+
+## Rendering
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
