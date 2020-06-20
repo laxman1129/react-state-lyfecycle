@@ -1,11 +1,5 @@
 # State and Lifecycle
 
-## State
-
-State is used with React Component Classes to make them dynamic. It enables the component to keep track of changing information in between renders. More specifically, the state of a component is an object that holds information that may change over the lifetime of the component.
-
-Props are immutable and dont change during the lifetime of the component.
-
 ## Lifecycle
 
 Every React Component has a lifecycle of its own, lifecycle of a component can be defined as the series of methods that are invoked in different stages of the component’s existence.  
@@ -15,12 +9,56 @@ A React Component can go through four stages of its life as follows.
 - **Mounting**: Mounting is the stage of rendering the JSX returned by the render method itself.
 - **Updating**: Updating is the stage when the state of a component is updated and the application is repainted.
 - **Unmounting**: As the name suggests Unmounting is the final step of the component lifecycle where the component is removed from the page.  
-  [Explaination](https://www.freecodecamp.org/news/how-to-understand-a-components-lifecycle-methods-in-reactjs-e1a609840630/)
-  ![Lifecycle](./lifecycle.png)
+  [Explaination](https://www.freecodecamp.org/news/how-to-understand-a-components-lifecycle-methods-in-reactjs-e1a609840630/)  
+  ![Lifecycle](./lifecycle.png)  
+  ![Lifecycle](./lifecycle1.png)
 
-## Hooks
+## State
 
-## Rendering
+`State` is used with React Component Classes to make them dynamic. It enables the component to keep track of changing information in between renders. More specifically, the state of a component is an object that holds information that may change over the lifetime of the component.
+
+`Props` are immutable and dont change during the lifetime of the component.
+
+## Hooks Introduction
+
+`Hooks` are a new addition in `React 16.8`. They let you use state and other React features without writing a class.
+
+```javascript
+import React, { useState } from "react";
+
+const Example = () => {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      {/*get count*/}
+      <p>You clicked {count} times</p>
+
+      {/*set count*/}
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+};
+```
+
+We are going to look at only `useState` and `useEffect` hooks now.
+
+- ### State Hook
+
+  `useState` hook is used to add some local state to the functional component.  
+   `useState` returns a pair: the _current state_ value and _a function_ that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to `this.setState` in a class, except it doesn’t merge the old and new state together.
+
+  **Note** that unlike this.state, the state here doesn’t have to be an object — although it can be if you want.
+
+- ### Effect Hook
+
+  [Explaination](https://blog.carbonfive.com/replacing-component-lifecycle-methods-with-react-hooks/) |
+  [Docs](https://reactjs.org/docs/hooks-effect.html)
+
+  Its not possible to use component lifecycle methods in the functional components.  
+  Until React 16.8, the most common solution for handling lifecycle events required ES6 class-based components.
+  The `useEffect` Hook lets you perform side effects in function components.  
+  Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. You can think of useEffect Hook as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

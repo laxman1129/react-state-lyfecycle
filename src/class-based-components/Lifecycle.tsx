@@ -84,13 +84,13 @@ class LifeCycle extends React.Component<DemoProps, DemoState> {
     //looping to create listItems
     const listItems = list.map((e) => <li key={e}>{e}</li>);
     return (
-      <>
+      <div className="box">
         <div>
           <h3>Lifecycle Methods!</h3>
         </div>
         {/* adding listItems to ul */}
         <ul>{listItems}</ul>
-      </>
+      </div>
     );
   }
 }
